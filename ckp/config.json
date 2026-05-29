@@ -1,0 +1,111 @@
+{
+  "run_id": "20251217_103652",
+  "argv": "train_refine6.py --model_name TransPos",
+  "timestamp": "20251217_103652",
+  "raw_args": {
+    "data": "G:\\TriComplex\\database\\protac0901_3358_esm_DCMAP_fp.pkl",
+    "batch_size": 2,
+    "epochs": 100,
+    "warmup_epochs": 2,
+    "lr": 0.0001,
+    "weight_decay": 5e-05,
+    "max_grad_norm": 1,
+    "num_workers": 0,
+    "no_amp": false,
+    "val_ratio": 0.2,
+    "ckpt_dir": "./log_TransPos",
+    "logs_dir": "./log_TransPos",
+    "hidden_dim": 64,
+    "num_layers_gnn": 3,
+    "num_node_embeddings_protac": 10,
+    "num_edge_embeddings_protac": 6,
+    "protein_node_fields": "23, 7, 24",
+    "num_edge_embeddings_protein": 6,
+    "gnn_heads": 4,
+    "maccs_dim": 167,
+    "ecfp_dim": 2048,
+    "label_smoothing": 0.2,
+    "patience": 100,
+    "seq_dropout": 0.1,
+    "seq_tokendrop": 0.1,
+    "gnn_dropout": 0.1,
+    "gnn_dropedge": 0.1,
+    "cm_drop2d": 0.1,
+    "fuse_dropout": 0.0,
+    "esm_num_layers": 5,
+    "esm_attn_heads": 8,
+    "esm_dropout": 0.0,
+    "model_name": "TransPos"
+  },
+  "data": {
+    "path": "G:\\TriComplex\\database\\protac0901_3358_esm_DCMAP_fp.pkl",
+    "n_total": 3328,
+    "n_train": 2662,
+    "n_val": 666,
+    "label1_distribution_train": {
+      "pos": 711,
+      "neg": 1951,
+      "total": 2662,
+      "missing": 0,
+      "pos_rate": 0.2670924117205109
+    },
+    "fixed_pos_weight": 2.7440225035161743
+  },
+  "model": {
+    "class": "TriComplexPredictor",
+    "vocab_size": 128,
+    "hidden_dim": 64,
+    "num_layers_gnn": 3,
+    "protein_node_field_sizes": [
+      23,
+      7,
+      24
+    ],
+    "num_node_embeddings_protac": 10,
+    "num_edge_embeddings_protac": 6,
+    "num_edge_embeddings_protein": 6,
+    "gnn_heads": 4,
+    "fp_dims": {
+      "maccs_dim": 167,
+      "ecfp_dim": 2048
+    },
+    "dropouts": {
+      "seq_dropout": 0.1,
+      "seq_tokendrop": 0.1,
+      "gnn_dropout": 0.1,
+      "gnn_dropedge": 0.1,
+      "cm_drop2d": 0.1,
+      "fuse_dropout": 0.0
+    },
+    "parameters": {
+      "total": 1483394,
+      "trainable": 1483394
+    }
+  },
+  "train": {
+    "batch_size": 2,
+    "epochs": 100,
+    "warmup_epochs": 2,
+    "lr": 0.0001,
+    "weight_decay": 5e-05,
+    "max_grad_norm": 1.0,
+    "val_ratio": 0.2,
+    "AUTO_POS_WEIGHT": true,
+    "given_pos_weight": 2.7440225035161743,
+    "label_smoothing": 0.2,
+    "patience": 100,
+    "seed": 0,
+    "use_amp": true
+  },
+  "env": {
+    "torch": "2.1.1+cu121",
+    "cuda_version": "12.1",
+    "cudnn_version": 8801,
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 3090"
+  },
+  "paths": {
+    "ckpt_dir": "G:\\TriComplex\\dataset\\log_TransPos",
+    "logs_dir": "G:\\TriComplex\\dataset\\log_TransPos"
+  }
+}
